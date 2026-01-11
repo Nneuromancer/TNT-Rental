@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24' Enclosed Car Hauler - Premium Enclosed Trailer | TNT Rental</title>
+    <meta name="description" content="View our premium 24' Enclosed Car Hauler enclosed hauling solution. Professional-grade equipment now available in Memphis/Olive Branch area.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .fullscreen-overlay.active {
+            display: flex;
+        }
+        
+        .fullscreen-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .nav-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-arrow.prev {
+            left: 30px;
+        }
+        
+        .nav-arrow.next {
+            right: 30px;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .close-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+        
+        .gallery-grid img {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-center mb-4">
+                <img src="Logo.jpg" alt="TNT Rental Logo" class="h-60 md:h-72">
+            </div>
+            <nav class="flex justify-center gap-4 mb-4">
+                <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    Home
+                </a>
+                <a href="trailer-03.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    24' Enclosed Car Hauler
+                </a>
+            </nav>
+            <div class="text-center">
+                <h1 class="text-2xl font-bold text-gray-900">24' Enclosed Car Hauler Gallery</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Trailer Header Section -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">24' Enclosed Car Hauler</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Premium enclosed trailer solution for professional hauling needs. Weather-protected design with spacious cargo capacity.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Enclosed Design</span>
+                <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Weather Protected</span>
+                <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Professional Grade</span>
+                <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-medium">Available Now</span>
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Gallery</h3>
+                <p class="text-gray-600">Click any image to view in full screen</p>
+            </div>
+            
+            <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group">
+                    <img src="trailer%2003/Trailer%2003%20(1).jpg" alt="24' Enclosed Car Hauler - View 1" class="w-full h-64 object-cover rounded-lg shadow-md" data-index="0">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="trailer%2003/Trailer%2003%20(2).jpg" alt="24' Enclosed Car Hauler - View 2" class="w-full h-64 object-cover rounded-lg shadow-md" data-index="1">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="trailer%2003/Trailer%2003%20(3).jpg" alt="24' Enclosed Car Hauler - View 3" class="w-full h-64 object-cover rounded-lg shadow-md" data-index="2">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="trailer%2003/Trailer%2003%20(4).jpg" alt="24' Enclosed Car Hauler - View 4" class="w-full h-64 object-cover rounded-lg shadow-md" data-index="3">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="trailer%2003/Trailer%2003%20(5).jpg" alt="24' Enclosed Car Hauler - View 5" class="w-full h-64 object-cover rounded-lg shadow-md" data-index="4">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-lg flex items-center justify-center">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Rental Pricing</h3>
+                    <p class="text-gray-600">Competitive rates for Memphis/Olive Branch area - now available</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Daily Rate -->
+                    <div class="text-center p-6 border border-gray-200 rounded-lg">
+                        <div class="mb-4">
+                            <i data-lucide="calendar" class="w-12 h-12 text-blue-600 mx-auto mb-2"></i>
+                            <h4 class="text-xl font-semibold text-gray-900">Daily Rate</h4>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-gray-900">$140</span>
+                            <span class="text-gray-600">/day</span>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>Perfect for short-term moves</li>
+                            <li>24-hour rental period</li>
+                            <li>Includes basic insurance</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Weekly Rate -->
+                    <div class="text-center p-6 border border-blue-500 bg-blue-50 rounded-lg relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                        </div>
+                        <div class="mb-4">
+                            <i data-lucide="calendar" class="w-12 h-12 text-blue-600 mx-auto mb-2"></i>
+                            <h4 class="text-xl font-semibold text-gray-900">Weekly Rate</h4>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-gray-900">$550</span>
+                            <span class="text-gray-600">/week</span>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>Save $430 vs daily rate</li>
+                            <li>7-day rental period</li>
+                            <li>Enhanced insurance coverage</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Monthly Rate -->
+                    <div class="text-center p-6 border border-gray-200 rounded-lg">
+                        <div class="mb-4">
+                            <i data-lucide="calendar" class="w-12 h-12 text-green-600 mx-auto mb-2"></i>
+                            <h4 class="text-xl font-semibold text-gray-900">Monthly Rate</h4>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-gray-900">$1,500</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>Best value for extended use</li>
+                            <li>28-day rental period</li>
+                            <li>Premium support included</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-500 mb-4">
+                        *Prices subject to change. Security deposit required. Availability starting 2026.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                            Reserve for 2026
+                        </button>
+                        <button class="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-medium transition-colors">
+                            Get More Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mb-12">
+            <div class="bg-gray-100 rounded-xl p-8">
+                <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Key Features</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Weather Protected</h4>
+                        <p class="text-sm text-gray-600">Fully enclosed design keeps your cargo safe from elements</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="maximize-2" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Spacious Interior</h4>
+                        <p class="text-sm text-gray-600">Generous cargo space for large items and equipment</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="lock" class="w-8 h-8 text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Secure Locking</h4>
+                        <p class="text-sm text-gray-600">Multiple locking points ensure your cargo stays secure</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="truck" class="w-8 h-8 text-orange-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Easy Towing</h4>
+                        <p class="text-sm text-gray-600">Professional-grade hitch system for smooth towing</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="ruler" class="w-8 h-8 text-indigo-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">24' L x 8' W x 7'6" H</h4>
+                        <p class="text-sm text-gray-600">Spacious dimensions for your hauling needs</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="door-open" class="w-8 h-8 text-red-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Escape Door</h4>
+                        <p class="text-sm text-gray-600">Emergency exit for safety and convenience</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="settings" class="w-8 h-8 text-teal-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">5,200 Torsion Axles</h4>
+                        <p class="text-sm text-gray-600">Smooth ride with durable torsion axle system</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="zap" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">5,000 lbs. Electric Jack</h4>
+                        <p class="text-sm text-gray-600">Effortless lifting and lowering with electric power</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="package" class="w-8 h-8 text-pink-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Wall and Floor E-tracks</h4>
+                        <p class="text-sm text-gray-600">Secure tie-down points throughout the trailer</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="wind" class="w-8 h-8 text-cyan-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Rear Wings</h4>
+                        <p class="text-sm text-gray-600">Aerodynamic design for better fuel economy</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-amber-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Loading Lights</h4>
+                        <p class="text-sm text-gray-600">Bright interior lighting for easy loading and unloading</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Full-screen Image Overlay -->
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <button class="close-button" id="closeButton">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        
+        <button class="nav-arrow prev" id="prevButton">
+            <i data-lucide="chevron-left" class="w-8 h-8"></i>
+        </button>
+        
+        <img src="" alt="" class="fullscreen-image" id="fullscreenImage">
+        
+        <button class="nav-arrow next" id="nextButton">
+            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">TNT Rental</h3>
+                    <p class="text-gray-400">Trailer rentals for all your needs</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://www.facebook.com/profile.php?id=100077725784974" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2026 TNT Rental. All rights reserved.
+                </p>
+                
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            const images = [
+                "trailer%2003/Trailer%2003%20(1).jpg",
+                "trailer%2003/Trailer%2003%20(2).jpg",
+                "trailer%2003/Trailer%2003%20(3).jpg",
+                "trailer%2003/Trailer%2003%20(4).jpg",
+                "trailer%2003/Trailer%2003%20(5).jpg"
+            ];
+            
+            let currentImageIndex = 0;
+            
+            const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            const closeButton = document.getElementById('closeButton');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            const galleryImages = document.querySelectorAll('.gallery-grid img');
+            
+            // Open fullscreen when clicking gallery images
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    showFullscreenImage();
+                });
+            });
+            
+            // Close fullscreen
+            closeButton.addEventListener('click', () => {
+                fullscreenOverlay.classList.remove('active');
+            });
+            
+            // Navigate images
+            prevButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateFullscreenImage();
+            });
+            
+            nextButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateFullscreenImage();
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (fullscreenOverlay.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        fullscreenOverlay.classList.remove('active');
+                    } else if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                        updateFullscreenImage();
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        updateFullscreenImage();
+                    }
+                }
+            });
+            
+            // Close on overlay click (but not on image click)
+            fullscreenOverlay.addEventListener('click', (e) => {
+                if (e.target === fullscreenOverlay) {
+                    fullscreenOverlay.classList.remove('active');
+                }
+            });
+            
+            function showFullscreenImage() {
+                updateFullscreenImage();
+                fullscreenOverlay.classList.add('active');
+            }
+            
+            function updateFullscreenImage() {
+                fullscreenImage.src = images[currentImageIndex];
+                fullscreenImage.alt = `Trailer 03 - View ${currentImageIndex + 1}`;
+            }
+        });
+    </script>
+</body>
+</html>
