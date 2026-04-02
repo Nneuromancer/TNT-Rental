@@ -216,13 +216,13 @@
                             <h4 class="text-xl font-semibold text-gray-900">Daily Rate</h4>
                         </div>
                         <div class="mb-4">
-                            <span class="text-3xl font-bold text-gray-900">$140</span>
+                            <span class="text-3xl font-bold text-gray-900">$156</span>
                             <span class="text-gray-600">/day</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-2">
                             <li>Perfect for short-term moves</li>
                             <li>24-hour rental period</li>
-                            <li>Includes basic insurance</li>
+                            
                         </ul>
                     </div>
                     
@@ -236,13 +236,13 @@
                             <h4 class="text-xl font-semibold text-gray-900">Weekly Rate</h4>
                         </div>
                         <div class="mb-4">
-                            <span class="text-3xl font-bold text-gray-900">$550</span>
+                            <span class="text-3xl font-bold text-gray-900">$612</span>
                             <span class="text-gray-600">/week</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-2">
                             <li>Save $430 vs daily rate</li>
                             <li>7-day rental period</li>
-                            <li>Enhanced insurance coverage</li>
+                            
                         </ul>
                     </div>
                     
@@ -253,13 +253,13 @@
                             <h4 class="text-xl font-semibold text-gray-900">Monthly Rate</h4>
                         </div>
                         <div class="mb-4">
-                            <span class="text-3xl font-bold text-gray-900">$1,500</span>
+                            <span class="text-3xl font-bold text-gray-900">$1,667</span>
                             <span class="text-gray-600">/month</span>
                         </div>
                         <ul class="text-sm text-gray-600 space-y-2">
                             <li>Best value for extended use</li>
                             <li>28-day rental period</li>
-                            <li>Premium support included</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -346,8 +346,8 @@
                         <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="zap" class="w-8 h-8 text-yellow-600"></i>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">5,000 lbs. Electric Jack</h4>
-                        <p class="text-sm text-gray-600">Effortless lifting and lowering with electric power</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">5,000 lbs. Manual Jack</h4>
+                        <p class="text-sm text-gray-600">Reliable hand-crank operation for controlled lifting and lowering</p>
                     </div>
                     
                     <div class="text-center">
@@ -439,7 +439,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            }
             
             const images = [
                 "trailer%2003/Trailer%2003%20(1).jpg",
@@ -466,11 +468,6 @@
                 });
             });
             
-            // Close fullscreen
-            closeButton.addEventListener('click', () => {
-                fullscreenOverlay.classList.remove('active');
-            });
-            
             // Navigate images
             prevButton.addEventListener('click', () => {
                 currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
@@ -482,11 +479,34 @@
                 updateFullscreenImage();
             });
             
-            // Keyboard navigation
+            function showFullscreenImage() {
+                updateFullscreenImage();
+                fullscreenOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeFullscreen() {
+                fullscreenOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            function updateFullscreenImage() {
+                fullscreenImage.src = images[currentImageIndex];
+                fullscreenImage.alt = `Trailer 03 - View ${currentImageIndex + 1}`;
+            }
+
+            closeButton.addEventListener('click', closeFullscreen);
+
+            fullscreenOverlay.addEventListener('click', (e) => {
+                if (e.target === fullscreenOverlay) {
+                    closeFullscreen();
+                }
+            });
+
             document.addEventListener('keydown', (e) => {
                 if (fullscreenOverlay.classList.contains('active')) {
                     if (e.key === 'Escape') {
-                        fullscreenOverlay.classList.remove('active');
+                        closeFullscreen();
                     } else if (e.key === 'ArrowLeft') {
                         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
                         updateFullscreenImage();
@@ -496,23 +516,6 @@
                     }
                 }
             });
-            
-            // Close on overlay click (but not on image click)
-            fullscreenOverlay.addEventListener('click', (e) => {
-                if (e.target === fullscreenOverlay) {
-                    fullscreenOverlay.classList.remove('active');
-                }
-            });
-            
-            function showFullscreenImage() {
-                updateFullscreenImage();
-                fullscreenOverlay.classList.add('active');
-            }
-            
-            function updateFullscreenImage() {
-                fullscreenImage.src = images[currentImageIndex];
-                fullscreenImage.alt = `Trailer 03 - View ${currentImageIndex + 1}`;
-            }
         });
     </script>
 </body>
